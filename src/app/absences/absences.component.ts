@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppModule } from '../app.module';
 
 @Component({
   selector: 'app-absences',
@@ -9,7 +10,8 @@ export class AbsencesComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    AppModule
   }
 
 }

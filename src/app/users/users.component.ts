@@ -1,3 +1,4 @@
+import { AppModule } from '../app.module';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +10,8 @@ export class UsersComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    AppModule
   }
 
 }
