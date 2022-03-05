@@ -3,6 +3,7 @@ import { HttpService } from '../http.service';
 import { DataService } from '../data.service';
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -10,10 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
-  constructor() { }
+httpService: HttpService;
+
+  constructor(private _http: HttpService) {
+    this.httpService=_http;
+   }
 
   ngOnInit() {
-    AppModule
+    AppModule;
+    console.log('Init came');
+    this.httpService.getUsers().subscribe(data => {console.log("data "+data)}, error =>{});
+    console.log('Init came');
   }
 
 }

@@ -55,7 +55,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { AuthService } from './auth.service';
+import { HttpService } from './http.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +69,7 @@ import { HttpClientModule } from '@angular/common/http';
     
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -120,7 +124,9 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [ MatDatepickerModule,
-    MatNativeDateModule ],
+    MatNativeDateModule,HttpService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthService, multi: true } 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
