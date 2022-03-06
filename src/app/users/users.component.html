@@ -1,15 +1,42 @@
-
-<h1>Users</h1>
-
-
-
-<mat-grid-list cols="2" rowHeight="100px">
-    <mat-grid-tile>1</mat-grid-tile>
-    <mat-grid-tile>2</mat-grid-tile>
-    <mat-grid-tile>3</mat-grid-tile>
-    <mat-grid-tile>4</mat-grid-tile>
-  </mat-grid-list>
+<div>
+    <h1>Users</h1>
 
 
-<Button>Add new user</Button>
-<Button>Add leave</Button>
+
+    <mat-grid-list style="width:1000px" cols="6" rowHeight="100px" >
+      
+        <mat-grid-tile 
+        *ngFor="let user of Users"
+        [colspan]="1"
+        [rowspan]="1">
+        <app-user 
+          [firstName]="user.FirstName"
+          [lastName]="user.LastName">  
+        </app-user>
+      </mat-grid-tile>
+      
+
+      </mat-grid-list>
+       <br> 
+       <h1>Add User</h1>
+      <form name="AddUserForm" (ngSubmit)="onAddUser()">
+        <div class="form-group">
+            <label for="newUserFirstName">First Name:</label>
+            <input type="text"  name="newUserFirstName" [(ngModel)]="AddUserForm.newUserFirstName" >
+           
+          
+           
+        </div>
+       
+        <div class="form-group">
+            <label for="newUserLastName">Last Name:</label>
+            <input type="text"  name="newUserLastName" [(ngModel)]="AddUserForm.newUserLastName">
+        </div>
+        <div class="form-group">
+            <button>Add new user </button>
+        </div>
+    </form>
+    <br>
+    <h1>Add leave</h1>
+    <button>Add leave</button>
+</div>

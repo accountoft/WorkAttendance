@@ -10,7 +10,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
+ 
+  Users: any;
 
+  AddUserForm: any = {
+    newUserFirstName:'',
+    newUserLastName:''
+  }; 
 httpService: HttpService;
 
   constructor(private _http: HttpService) {
@@ -19,9 +25,19 @@ httpService: HttpService;
 
   ngOnInit() {
     AppModule;
-    console.log('Init came');
-    this.httpService.getUsers().subscribe(data => {console.log("data "+data)}, error =>{});
-    console.log('Init came');
+   
+    this.httpService.getUsers().subscribe(data => {console.log("data "+ data )
+    this.Users=data;
+  }, error =>{});
+  
   }
+
+  onAddUser(){
+    const{ newUserFirstName,newUserLastName}= this.AddUserForm;
+
+
+  }
+ 
+
 
 }

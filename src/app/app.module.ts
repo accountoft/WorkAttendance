@@ -59,6 +59,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './auth.service';
 import { HttpService } from './http.service';
+import { UserComponent } from './users/user/user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +67,7 @@ import { HttpService } from './http.service';
     SettingsComponent,
     UsersComponent,
     AbsencesComponent,
+    UserComponent,
     
   ],
   imports: [
