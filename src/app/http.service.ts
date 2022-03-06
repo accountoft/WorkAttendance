@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { identifierName } from '@angular/compiler';
+import { UserClass } from './users/user/userclass.model';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' })
@@ -43,6 +45,14 @@ const body=new HttpParams()
 
 
 
+}
+
+AddNewUser(user: UserClass){
+
+   this.http.post('https://api4.allhours.com/api/v1/Users',
+    user, Options
+  ).subscribe(data =>{
+  },err=>{console.log(err) })
 }
 
     getUsers(){
