@@ -18,7 +18,8 @@ export class UsersComponent implements OnInit {
 
   AddUserForm: any = {
     newUserFirstName:'',
-    newUserLastName:''
+    newUserLastName:'',
+    newUserEmail:''
   }; 
 
  
@@ -40,14 +41,15 @@ httpService: HttpService;
 
   onAddUser(){
     
-    const{ newUserFirstName,newUserLastName}= this.AddUserForm;
+    const{ newUserFirstName,newUserLastName,newUserEmail}= this.AddUserForm;
 
     var user: UserClass = 
-      new UserClass(uuid.v4(),newUserFirstName,newUserLastName,false,false,false,false);
+      new UserClass(uuid.v4(),newUserFirstName,newUserLastName,newUserEmail,false,false,false,false);
 
     this.httpService.AddNewUser(user)
   }
  
+  
 
 
 }

@@ -59,10 +59,13 @@ AddNewUser(user: UserClass){
      
       return this.http.get('https://api4.allhours.com/api/v1/Users',Options)
     }
+
   
-    getAbsences(term:String){
+    getAbsences(date: string,date1: string){
       
-      return this.http.get('https://api4.allhours.com/api/v1/Absences')
+      return this.http.get('https://api4.allhours.com/api/v1/Absences?dateFrom='+date+'&dateTo='+date1,Options)
+
+      //return this.http.get('https://api4.allhours.com/api/v1/Absences?dateFrom=2022-03-05T00%3A00%3A00.6071779&dateTo=2022-03-05T23%3A55%3A29.6071779',Options)
     }
   
     

@@ -23,20 +23,31 @@
         <div class="form-group">
             <label for="newUserFirstName">First Name:</label>
             <input type="text"  name="newUserFirstName" [(ngModel)]="AddUserForm.newUserFirstName" >
-           
-          
-           
         </div>
-       
         <div class="form-group">
             <label for="newUserLastName">Last Name:</label>
             <input type="text"  name="newUserLastName" [(ngModel)]="AddUserForm.newUserLastName">
         </div>
+        <div class="form-group">
+          <label for="newUserEmail">Email:</label>
+          <input type="text"  name="newUserEmail" [(ngModel)]="AddUserForm.newUserEmail">
+      </div>
         <div class="form-group">
             <button>Add new user </button>
         </div>
     </form>
     <br>
     <h1>Add leave</h1>
+
+    <mat-grid-tile 
+    *ngFor="let userAbsence of Users"
+    [colspan]="1"
+    [rowspan]="1">
+    <app-user 
+      [firstName]="user.FirstName"
+      [lastName]="user.LastName">  
+    </app-user>
+  </mat-grid-tile>
+
     <button>Add leave</button>
 </div>

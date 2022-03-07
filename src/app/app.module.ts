@@ -60,6 +60,8 @@ import { FormsModule } from '@angular/forms';
 import { AuthService } from './auth.service';
 import { HttpService } from './http.service';
 import { UserComponent } from './users/user/user.component';
+import { AbsenceComponent } from './absences/absence/absence.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,6 +70,7 @@ import { UserComponent } from './users/user/user.component';
     UsersComponent,
     AbsencesComponent,
     UserComponent,
+    AbsenceComponent,
     
   ],
   imports: [
