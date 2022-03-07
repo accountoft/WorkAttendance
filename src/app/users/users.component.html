@@ -3,7 +3,7 @@
 
 
 
-    <mat-grid-list style="width:1000px" cols="6" rowHeight="100px" >
+    <mat-grid-list style="width:1000px" cols="6" rowHeight="100px" gutterSize="15px" >
       
         <mat-grid-tile 
         *ngFor="let user of Users"
@@ -20,26 +20,44 @@
        <br> 
        <h1>Add User</h1>
       <form name="AddUserForm" (ngSubmit)="onAddUser()">
-        <div class="form-group">
-            <label for="newUserFirstName">First Name:</label>
+        <div class="form-group" style="padding: 10px;">
+            <label for="newUserFirstName">First Name:   </label>
             <input type="text"  name="newUserFirstName" [(ngModel)]="AddUserForm.newUserFirstName" >
         </div>
-        <div class="form-group">
-            <label for="newUserLastName">Last Name:</label>
+        <div class="form-group" style="padding: 10px;">
+            <label for="newUserLastName">Last Name:   </label>
             <input type="text"  name="newUserLastName" [(ngModel)]="AddUserForm.newUserLastName">
         </div>
-        <div class="form-group">
-          <label for="newUserEmail">Email:</label>
+        <div class="form-group" style="padding: 10px;">
+          <label for="newUserEmail">Email:  </label>
           <input type="text"  name="newUserEmail" [(ngModel)]="AddUserForm.newUserEmail">
       </div>
         <div class="form-group">
+          <br>
             <button>Add new user </button>
         </div>
     </form>
     <br>
     <h1>Add leave</h1>
+    
 
+<mat-form-field appearance="fill" >
+  <mat-label>Select absence type</mat-label>
+  <mat-select [(value)]="selected">
+    <mat-option>None</mat-option>
+    <mat-option value="option1">Annual leave</mat-option>
+    <mat-option value="option2">Business leave</mat-option>
+    <mat-option value="option3">Holiday leave</mat-option>
+    <mat-option value="option4">Maternity leave</mat-option>
+    <mat-option value="option5">Paternity leave</mat-option>
+    <mat-option value="option6">Sick leave</mat-option>
+    <mat-option value="option7">Study leave</mat-option>
+    <mat-option value="option8">Use surplus hours</mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
     
 
     <button>Add leave</button>
 </div>
+<br>

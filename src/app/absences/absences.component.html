@@ -4,7 +4,8 @@
 
 <p>Show workers that were not at work on selected day</p>
 
-  <mat-calendar [(selected)]="selected"></mat-calendar>
+  <mat-calendar style="width: max-content;"
+   [(selected)]="selected"></mat-calendar>
   <p>Selected date: {{selected}}</p>
   <button (click)="onSelectedDate()">Save</button>
   <mat-grid-list style="width:1000px" cols="6" rowHeight="100px" >

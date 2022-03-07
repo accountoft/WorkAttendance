@@ -6,6 +6,9 @@ import { UserClass } from './user/userclass.model';
 import * as uuid from 'uuid';
 
 
+
+
+
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -14,7 +17,9 @@ import * as uuid from 'uuid';
 export class UsersComponent implements OnInit {
  
   Users: any;
- 
+  absenceDefinitions:any;
+  selected = 'option2';
+
 
   AddUserForm: any = {
     newUserFirstName:'',
@@ -32,10 +37,12 @@ httpService: HttpService;
 
   ngOnInit() {
     AppModule;
-   
+     this.getAbsenceDefinition();
     this.httpService.getUsers().subscribe(data => {console.log("data "+ data )
     this.Users=data;
   }, error =>{});
+
+  
   
   }
 
@@ -49,7 +56,16 @@ httpService: HttpService;
     this.httpService.AddNewUser(user)
   }
  
-  
+onAddUserLeave(){
+
+}  
+
+getAbsenceDefinition(){
+  this.httpService.getAbsenceDefinitions().subscribe(data => {console.log("data "+ data )
+  this.absenceDefinitions=data;
+  console.log("findAbsDef"+this.absenceDefinitions);
+}, error =>{});
+}
 
 
 }

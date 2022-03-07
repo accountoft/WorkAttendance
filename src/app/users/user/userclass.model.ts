@@ -31,3 +31,27 @@ export class UserClass{
 
 
 }
+export class IAbsenceDefinition{
+  private Id: string;
+   private Name: string;
+   private IntegrationId: number;
+   private Code: number;
+   private Type: number;
+   private IsAvailableForAdminsOnly: boolean;
+   private CategoryDefinitionId: string;
+   private CategoryDefinitionName: string;
+   private Fraction: number;
+ 
+   constructor(Id: string, Name: string,IntegrationId: number,Code: number,Type: number,IsAvailableForAdminsOnly: boolean,CategoryDefinitionId: string,CategoryDefinitionName: string,Fraction: number){
+     this.Id=Id;
+     this.Name=Name;
+     this.IntegrationId=IntegrationId;
+     this.Code=Code;
+     this.Type=Type;
+     this.IsAvailableForAdminsOnly=IsAvailableForAdminsOnly;  
+     this.CategoryDefinitionId=CategoryDefinitionId;
+     this.CategoryDefinitionName=CategoryDefinitionName;
+     this.Fraction=Fraction;
+ 
+   }
+ }

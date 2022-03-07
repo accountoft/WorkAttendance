@@ -1,6 +1,12 @@
 @use '@angular/material' as mat;
 mat-grid-tile {
-    background: lightblue;
+    background: rgb(244, 249, 253);
+    padding: auto;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    border-color: black;
+    box-shadow: 2px;
   }
   
   
